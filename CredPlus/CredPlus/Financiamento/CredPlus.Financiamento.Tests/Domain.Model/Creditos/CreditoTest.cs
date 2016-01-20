@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CredPlus.Financiamento.Domain.Model.Creditos;
+using CredPlus.Financiamento.Domain.Model.Creditos.Enums;
+using CredPlus.Financiamento.Domain.Model.Creditos.ObjetosValor;
 
 namespace CredPlus.Financiamento.Tests.Domain.Model.Creditos
 {
@@ -15,8 +17,8 @@ namespace CredPlus.Financiamento.Tests.Domain.Model.Creditos
         public void TesteValorMaximoCredito()
         {
             var credito = Credito.Factory.New(21000, 
-                Financiamento.Domain.Model.Creditos.Enums.TipoCredito.CapitalGiro, 
-                null);
+                Financiamento.Domain.Model.Creditos.Enums.TipoCredito.CapitalGiro,
+                new AvaliacaoCredito("yan", TipoRisco.Alto, true, "teste"));
         }
 
         [TestMethod]
@@ -25,7 +27,17 @@ namespace CredPlus.Financiamento.Tests.Domain.Model.Creditos
         {
             var credito = Credito.Factory.New(-21000,
                 Financiamento.Domain.Model.Creditos.Enums.TipoCredito.CapitalGiro,
-                null);
+                new AvaliacaoCredito("yan", TipoRisco.Alto, true, "teste"));
+        }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void TesteValorRiscoAlto()
+        {
+            var credito = Credito.Factory.New(20000,
+                TipoCredito.CapitalGiro,
+                new AvaliacaoCredito("yan", TipoRisco.Alto, true, "teste"));
         }
     }
 }

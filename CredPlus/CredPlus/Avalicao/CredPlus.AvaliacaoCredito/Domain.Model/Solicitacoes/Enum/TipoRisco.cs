@@ -1,4 +1,4 @@
-﻿namespace CredPlus.Financiamento.Domain.Model.Creditos.Enums
+﻿namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Enums
 {
     public enum TipoRisco
     {

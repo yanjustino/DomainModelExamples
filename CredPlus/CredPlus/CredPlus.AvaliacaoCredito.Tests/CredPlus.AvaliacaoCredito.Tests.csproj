@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F580F2C8-A87B-4A5D-BBE1-ADB235D9C711}</ProjectGuid>
+    <ProjectGuid>{D16E9C01-C5DD-4D25-9D49-C478A0F9FA14}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CredPlus.Financiamento</RootNamespace>
-    <AssemblyName>CredPlus.Financiamento</AssemblyName>
+    <RootNamespace>CredPlus.AvaliacaoCredito.Tests</RootNamespace>
+    <AssemblyName>CredPlus.AvaliacaoCredito.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain.Model\Creditos\Credito.cs" />
-    <Compile Include="Domain.Model\Creditos\Enums\TipoCredito.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Domain.Model\Solicitacoes\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

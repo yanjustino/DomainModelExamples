@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F580F2C8-A87B-4A5D-BBE1-ADB235D9C711}</ProjectGuid>
+    <ProjectGuid>{1F43AEFC-E13E-404A-B124-BA6971B5EC1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CredPlus.Financiamento</RootNamespace>
-    <AssemblyName>CredPlus.Financiamento</AssemblyName>
+    <RootNamespace>CredPlus.AvaliacaoCredito</RootNamespace>
+    <AssemblyName>CredPlus.AvaliacaoCredito</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -41,11 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain.Model\Creditos\Credito.cs" />
-    <Compile Include="Domain.Model\Creditos\Enums\TipoCredito.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\AvaliacaoCredito.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\Enum\TipoRisco.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\Policies\SolicitacaoCreditoPolicy.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\SolicitacaoCredito.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compartilhado\CredPlus.Compartilhado\CredPlus.Compartilhado.csproj">
+      <Project>{4fc19490-d182-4b88-bad5-85e7bc6b5a87}</Project>
+      <Name>CredPlus.Compartilhado</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
