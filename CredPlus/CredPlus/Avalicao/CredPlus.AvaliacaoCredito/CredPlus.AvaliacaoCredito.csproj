@@ -48,6 +48,7 @@
     <Compile Include="Domain.Model\Solicitacoes\Enum\TipoRisco.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Policies\AutorizacaoCreditoPolicy.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Policies\SolicitacaoCreditoPolicy.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\Repositories\ISolicitacaoCreditoRepository.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Resources\SolicitacaoResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

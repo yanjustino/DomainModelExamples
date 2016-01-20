@@ -12,7 +12,7 @@ namespace CredPlus.Compartilhado.Validations
             get
             {
                 CreateNotificationListIfNull();
-                _notifications.Clear();
+                //_notifications.Clear();
                 Validate();
                 return !HasNotifications();
             }

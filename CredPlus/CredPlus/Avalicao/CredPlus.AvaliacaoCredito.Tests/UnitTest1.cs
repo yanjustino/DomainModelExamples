@@ -1,45 +1,40 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes;
+using CredPlus.AvaliacaoCredito.Application.Solicitacoes;
+using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Repositories;
+using CredPlus.AvaliacaoCredito.Application.Solicitacoes.Commands;
 
 namespace CredPlus.AvaliacaoCredito.Tests
 {
+    public class RepositoryMock : ISolicitacaoCreditoRepository
+    {
+        public bool Chamado { get; set; }
+
+        public void Salvar(SolicitacaoCredito solicitacao)
+        {
+            Chamado = true;
+            return;
+        }
+    }
+
     [TestClass]
     public class UnitTest1
     {
         [TestMethod]
         public void TestMethod1()
         {
-            var solicitacao = SolicitacaoCredito.Factory.New(Guid.NewGuid(), 0);
-            Assert.IsFalse(solicitacao.Policy.IsValid);
-        }
+            var mock = new RepositoryMock();
+            var service = new SolicitacaoCreditoService(mock);
 
-        [TestMethod]
-        public void TestMethod2()
-        {
-            var solicitacao = SolicitacaoCredito.Factory.New(Guid.NewGuid(), 20000);
-            solicitacao.Autorizar("yan", Domain.Model.Solicitacoes.Enums.TipoRisco.Alto, 20000);
+            service.Solicitar(new RegistroSolicitacaoCreditoCommand
+            {
+                ClienteId = Guid.NewGuid(),
+                Valor = 0
+            });
 
-
-            Assert.IsFalse(solicitacao.Policy.IsValid);
-        }
-
-        [TestMethod]
-        public void TestMethod3()
-        {
-            var solicitacao = SolicitacaoCredito.Factory.New(Guid.NewGuid(), 20000);
-            solicitacao.Autorizar("yan", Domain.Model.Solicitacoes.Enums.TipoRisco.Medio, 20000);
-
-            Assert.IsFalse(solicitacao.Policy.IsValid);
-        }
-
-        [TestMethod]
-        public void TestMethod4()
-        {
-            var solicitacao = SolicitacaoCredito.Factory.New(Guid.NewGuid(), 20000);
-            solicitacao.Autorizar("yan", Domain.Model.Solicitacoes.Enums.TipoRisco.Baixo, 21000);
-
-            Assert.IsFalse(solicitacao.Policy.IsValid);
+            Assert.IsFalse(service.IsValid);
+            Assert.IsFalse(mock.Chamado);
         }
     }
 }

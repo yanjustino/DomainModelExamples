@@ -1,14 +1,30 @@
 ﻿using System;
 using CredPlus.AvaliacaoCredito.Application.Solicitacoes.Commands;
 using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes;
+using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Repositories;
+using CredPlus.Compartilhado.Validations;
 
 namespace CredPlus.AvaliacaoCredito.Application.Solicitacoes
 {
-    public class SolicitacaoCreditoService : ISolicitacaoCreditoService
+    public class SolicitacaoCreditoService : Validatable, ISolicitacaoCreditoService
     {
-        public SolicitacaoCredito Solicitar(RegistroSolicitacaoCreditoCommand command)
+        ISolicitacaoCreditoRepository _repository;
+
+        public SolicitacaoCreditoService(ISolicitacaoCreditoRepository repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
+        }
+
+        public void Solicitar(RegistroSolicitacaoCreditoCommand command)
+        {
+            var solicitacao = SolicitacaoCredito.Factory.New(command);
+
+            if (solicitacao.Policy.IsValid)
+                _repository.Salvar(solicitacao);
+            else
+            {
+                Notify(solicitacao.Policy.GetNotifications());
+            }
         }
     }
 }

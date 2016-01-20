@@ -1,4 +1,5 @@
-﻿using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Enums;
+﻿using CredPlus.AvaliacaoCredito.Application.Solicitacoes.Commands;
+using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Enums;
 using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Policies;
 using CredPlus.Compartilhado.Validations;
 using System;
@@ -34,12 +35,11 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
             Policy = new SolicitacaoCreditoPolicy(this);
         }
 
-        public void Autorizar(string avaliador, TipoRisco risco, decimal valor, string justificativa = "")
+        internal void Autorizar(string avaliador, TipoRisco risco, decimal valor, string justificativa = "")
         {
             Aprovada = true;
             ValorAutorizado = valor;
             Avaliacao = new AvaliacaoCredito(avaliador, risco, justificativa);
-
 
             Policy = new AutorizacaoCreditoPolicy(this);
         }
@@ -65,9 +65,9 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
 
         public class Factory
         {
-            public static SolicitacaoCredito New(Guid clienteID, decimal valor)
+            public static SolicitacaoCredito New(RegistroSolicitacaoCreditoCommand command)
             {
-                return new SolicitacaoCredito(clienteID, valor);
+                return new SolicitacaoCredito(command.ClienteId, command.Valor);
             }
         }
 

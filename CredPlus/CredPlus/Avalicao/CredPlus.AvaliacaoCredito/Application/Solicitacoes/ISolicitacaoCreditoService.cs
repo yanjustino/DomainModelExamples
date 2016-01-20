@@ -5,6 +5,6 @@ namespace CredPlus.AvaliacaoCredito.Application.Solicitacoes
 {
     public interface ISolicitacaoCreditoService
     {
-        SolicitacaoCredito Solicitar(RegistroSolicitacaoCreditoCommand command);
+        void Solicitar(RegistroSolicitacaoCreditoCommand command);
     }
 }
