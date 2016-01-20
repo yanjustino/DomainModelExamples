@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain.Model\Creditos\ObjetosValor\AvaliacaoCredito.cs" />
     <Compile Include="Domain.Model\Creditos\Credito.cs" />
+    <Compile Include="Domain.Model\Creditos\Enums\TipoCredito.cs" />
+    <Compile Include="Domain.Model\Creditos\Enums\TipoRisco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
