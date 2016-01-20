@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="Domain.Model\Solicitacoes\AvaliacaoCredito.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Enum\TipoRisco.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\Policies\AutorizacaoCreditoPolicy.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Policies\SolicitacaoCreditoPolicy.cs" />
     <Compile Include="Domain.Model\Solicitacoes\SolicitacaoCredito.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\Specs\SolicitacaoCreditoSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

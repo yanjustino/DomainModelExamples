@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace CredPlus.Compartilhado.Validations
 {
-    public class Validatable
+    public abstract class Validatable
     {
         private List<Notification> _notifications;
 
@@ -40,7 +40,7 @@ namespace CredPlus.Compartilhado.Validations
             _notifications.AddRange(notifications);
         }
 
-        protected void Notify(Notification[] notifications)
+        protected void Notify(params Notification[] notifications)
         {
             CreateNotificationListIfNull();
             _notifications.AddRange(notifications);
@@ -48,7 +48,7 @@ namespace CredPlus.Compartilhado.Validations
 
         protected bool HasNotifications()
         {
-            return _notifications.Any();
+            return _notifications.Count() == 0;
         }
 
         protected virtual void Validate() { }

@@ -7,7 +7,7 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
 {
     public class SolicitacaoCredito
     {
-        internal Validatable Policy { get; private set; }
+        public Validatable Policy { get; private set; }
 
         public Guid Id { get; private set; }
         public Guid ClienteId { get; private set; }
@@ -19,7 +19,9 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
         public decimal Valor { get; private set; }
         public decimal ValorAutorizado { get; private set; }
         public int? QuantidadeParcelas { get; set; }
-        public AvaliacaoCredito Avaliacao { get; private set; }
+        public virtual AvaliacaoCredito Avaliacao { get; private set; }
+
+        protected SolicitacaoCredito() { }
 
         internal SolicitacaoCredito(Guid clienteID, decimal valor)
         {
@@ -32,11 +34,13 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
             Policy = new SolicitacaoCreditoPolicy(this);
         }
 
-        internal void Autorizar(string avaliador, TipoRisco risco, decimal valor, string justificativa = "")
+        public void Autorizar(string avaliador, TipoRisco risco, decimal valor, string justificativa = "")
         {
             Aprovada = true;
             ValorAutorizado = valor;
             Avaliacao = new AvaliacaoCredito(avaliador, risco, justificativa);
+
+            Policy = new AutorizacaoCreditoPolicy(this);
         }
 
         internal void Rejeitar(string avaliador, TipoRisco risco, string justificativa)

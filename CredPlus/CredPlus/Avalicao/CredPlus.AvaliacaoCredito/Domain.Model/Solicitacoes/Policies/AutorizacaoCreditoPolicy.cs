@@ -1,4 +1,5 @@
 ﻿using CredPlus.Compartilhado.Validations;
+using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Specs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Policies
 {
-    public class SolicitacaoCreditoPolicy : Validatable
+
+    public class AutorizacaoCreditoPolicy: Validatable
     {
         public SolicitacaoCredito Solicitacao { get; private set; }
 
-        public SolicitacaoCreditoPolicy(SolicitacaoCredito solicitacao)
+        public AutorizacaoCreditoPolicy(SolicitacaoCredito solicitacao)
         {
             Solicitacao = solicitacao;
         }
@@ -20,8 +22,8 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Policies
         {
             Notify
             (
-                AssertionConcern.AssertNotNull(Solicitacao, "Solicitacão não pode ser nula"),
-                AssertionConcern.AssertTrue(Solicitacao.Valor > 0, "Solicitação inválida")
+                AssertionConcern.AssertTrue(Solicitacao.SolictacaoDeRisco(), 
+                "Solicitacao de Crédito inválida. Valor fora de sua faixa")
             );
         }
     }

@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CredPlus.Financiamento.Domain.Model.Creditos;
 using CredPlus.Financiamento.Domain.Model.Creditos.Enums;
-using CredPlus.Financiamento.Domain.Model.Creditos.ObjetosValor;
 
 namespace CredPlus.Financiamento.Tests.Domain.Model.Creditos
 {

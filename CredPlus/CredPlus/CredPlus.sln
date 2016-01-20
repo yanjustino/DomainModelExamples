@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus.Compartilhado", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus.AvaliacaoCredito", "Avalicao\CredPlus.AvaliacaoCredito\CredPlus.AvaliacaoCredito.csproj", "{1F43AEFC-E13E-404A-B124-BA6971B5EC1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus.AvaliacaoCredito.Tests", "CredPlus.AvaliacaoCredito.Tests\CredPlus.AvaliacaoCredito.Tests.csproj", "{D16E9C01-C5DD-4D25-9D49-C478A0F9FA14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus.AvaliacaoCredito.Tests", "Avalicao\CredPlus.AvaliacaoCredito.Tests\CredPlus.AvaliacaoCredito.Tests.csproj", "{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +45,10 @@ Global
 		{1F43AEFC-E13E-404A-B124-BA6971B5EC1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F43AEFC-E13E-404A-B124-BA6971B5EC1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F43AEFC-E13E-404A-B124-BA6971B5EC1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D16E9C01-C5DD-4D25-9D49-C478A0F9FA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D16E9C01-C5DD-4D25-9D49-C478A0F9FA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D16E9C01-C5DD-4D25-9D49-C478A0F9FA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D16E9C01-C5DD-4D25-9D49-C478A0F9FA14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +62,6 @@ Global
 		{1AB49F75-5AF1-4481-8A0A-A2D2C9629599} = {78F75CE4-9B38-45F1-86BB-99005031D331}
 		{4FC19490-D182-4B88-BAD5-85E7BC6B5A87} = {1AB49F75-5AF1-4481-8A0A-A2D2C9629599}
 		{1F43AEFC-E13E-404A-B124-BA6971B5EC1B} = {6D8B3BB3-D2D4-4D18-A101-B5C483004DC9}
-		{D16E9C01-C5DD-4D25-9D49-C478A0F9FA14} = {6D8B3BB3-D2D4-4D18-A101-B5C483004DC9}
+		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811} = {6D8B3BB3-D2D4-4D18-A101-B5C483004DC9}
 	EndGlobalSection
 EndGlobal
