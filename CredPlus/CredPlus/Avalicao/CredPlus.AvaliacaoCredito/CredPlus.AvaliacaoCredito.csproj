@@ -41,15 +41,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Solicitacoes\Commands\RegistroSolicitacaoCreditoCommand.cs" />
+    <Compile Include="Application\Solicitacoes\ISolicitacaoCreditoService.cs" />
+    <Compile Include="Application\Solicitacoes\SolicitacaoCreditoService.cs" />
     <Compile Include="Domain.Model\Solicitacoes\AvaliacaoCredito.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Enum\TipoRisco.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Policies\AutorizacaoCreditoPolicy.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Policies\SolicitacaoCreditoPolicy.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\Resources\SolicitacaoResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SolicitacaoResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Domain.Model\Solicitacoes\SolicitacaoCredito.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Specs\SolicitacaoCreditoSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Domain.Model\Solicitacoes\Resources\SolicitacaoResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SolicitacaoResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Compartilhado\CredPlus.Compartilhado\CredPlus.Compartilhado.csproj">
       <Project>{4fc19490-d182-4b88-bad5-85e7bc6b5a87}</Project>

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Resources;
 
 namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Policies
 {
@@ -20,11 +21,26 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Policies
 
         protected override void Validate()
         {
+            if (Solicitacao.Avaliacao.Risco == Enums.TipoRisco.Alto)
+                Notificar(Solicitacao.SolictacaoAltoRisco(), 
+                    SolicitacaoResource.MensagemSolicitacaoRisco);
+
+            else if (Solicitacao.Avaliacao.Risco == Enums.TipoRisco.Medio)
+                Notificar(Solicitacao.SolictacaoMedioRisco(),
+                    SolicitacaoResource.MensagemSolicitacaoRisco);
+
+            else if (Solicitacao.Avaliacao.Risco == Enums.TipoRisco.Baixo)
+                Notificar(Solicitacao.SolictacaoBaixoRisco(),
+                    SolicitacaoResource.MensagemSolicitacaoRisco);
+        }
+
+        private void Notificar(bool condicao, string mensagem)
+        {
             Notify
             (
-                AssertionConcern.AssertTrue(Solicitacao.SolictacaoDeRisco(), 
-                "Solicitacao de Crédito inválida. Valor fora de sua faixa")
+                AssertionConcern.AssertTrue(condicao, mensagem)
             );
         }
+
     }
 }

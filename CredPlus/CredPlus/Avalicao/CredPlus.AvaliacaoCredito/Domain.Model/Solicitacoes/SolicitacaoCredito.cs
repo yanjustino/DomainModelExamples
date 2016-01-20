@@ -40,6 +40,7 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
             ValorAutorizado = valor;
             Avaliacao = new AvaliacaoCredito(avaliador, risco, justificativa);
 
+
             Policy = new AutorizacaoCreditoPolicy(this);
         }
 

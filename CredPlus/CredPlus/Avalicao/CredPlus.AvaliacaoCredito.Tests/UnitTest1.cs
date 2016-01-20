@@ -23,5 +23,23 @@ namespace CredPlus.AvaliacaoCredito.Tests
 
             Assert.IsFalse(solicitacao.Policy.IsValid);
         }
+
+        [TestMethod]
+        public void TestMethod3()
+        {
+            var solicitacao = SolicitacaoCredito.Factory.New(Guid.NewGuid(), 20000);
+            solicitacao.Autorizar("yan", Domain.Model.Solicitacoes.Enums.TipoRisco.Medio, 20000);
+
+            Assert.IsFalse(solicitacao.Policy.IsValid);
+        }
+
+        [TestMethod]
+        public void TestMethod4()
+        {
+            var solicitacao = SolicitacaoCredito.Factory.New(Guid.NewGuid(), 20000);
+            solicitacao.Autorizar("yan", Domain.Model.Solicitacoes.Enums.TipoRisco.Baixo, 21000);
+
+            Assert.IsFalse(solicitacao.Policy.IsValid);
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace CredPlus.Compartilhado.Validations
                 CreateNotificationListIfNull();
                 _notifications.Clear();
                 Validate();
-                return HasNotifications();
+                return !HasNotifications();
             }
         }
 
@@ -48,7 +48,7 @@ namespace CredPlus.Compartilhado.Validations
 
         protected bool HasNotifications()
         {
-            return _notifications.Count() == 0;
+            return _notifications.Any(x => x != null);
         }
 
         protected virtual void Validate() { }

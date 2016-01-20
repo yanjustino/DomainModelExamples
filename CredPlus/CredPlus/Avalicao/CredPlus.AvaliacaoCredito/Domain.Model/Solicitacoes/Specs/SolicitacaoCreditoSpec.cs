@@ -9,17 +9,29 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Specs
 {
     public static class  SolicitacaoCreditoSpec
     {
-        public static bool SolictacaoDeRisco(this SolicitacaoCredito solicitacao)
+        public static bool SolictacaoAltoRisco(this SolicitacaoCredito solicitacao)
         {
             return solicitacao.Avaliacao.Risco == Enums.TipoRisco.Alto &&
-                   solicitacao.Valor <= 5000;
+                   solicitacao.ValorAutorizado <= 5000;
         }
 
-        public static Expression<Func<SolicitacaoCredito, bool>> QuerySolictacaoDeRisco
+        public static bool SolictacaoMedioRisco(this SolicitacaoCredito solicitacao)
+        {
+            return solicitacao.Avaliacao.Risco == Enums.TipoRisco.Medio &&
+                   solicitacao.ValorAutorizado <= 10000;
+        }
+
+        public static bool SolictacaoBaixoRisco(this SolicitacaoCredito solicitacao)
+        {
+            return solicitacao.Avaliacao.Risco == Enums.TipoRisco.Baixo &&
+                   solicitacao.ValorAutorizado <= 20000;
+        }
+
+        public static Expression<Func<SolicitacaoCredito, bool>> QuerySolictacaoAltoRisco
         {
             get
             {
-                return x => x.SolictacaoDeRisco();
+                return x => x.SolictacaoAltoRisco();
             }
         }
     }
