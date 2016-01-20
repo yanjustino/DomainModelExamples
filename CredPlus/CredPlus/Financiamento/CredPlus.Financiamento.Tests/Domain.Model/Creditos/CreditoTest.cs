@@ -14,14 +14,18 @@ namespace CredPlus.Financiamento.Tests.Domain.Model.Creditos
         [ExpectedException(typeof(Exception))]
         public void TesteValorMaximoCredito()
         {
-            var credito = new Credito(21000);
+            var credito = Credito.Factory.New(21000, 
+                Financiamento.Domain.Model.Creditos.Enums.TipoCredito.CapitalGiro, 
+                null);
         }
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
         public void TesteValorMinimoCreditoMaiorQueZero()
         {
-            var credito = new Credito(-21000);
+            var credito = Credito.Factory.New(-21000,
+                Financiamento.Domain.Model.Creditos.Enums.TipoCredito.CapitalGiro,
+                null);
         }
     }
 }
