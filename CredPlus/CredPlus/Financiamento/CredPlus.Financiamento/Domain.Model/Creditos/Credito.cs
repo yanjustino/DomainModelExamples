@@ -6,7 +6,7 @@ namespace CredPlus.Financiamento.Domain.Model.Creditos
     {
         public Credito(decimal valor)
         {
-            if (valor > 20000)
+            if (valor < 0 || valor > 20000)
                 throw new Exception("Valor inválido");
         }
 
