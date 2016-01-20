@@ -7,7 +7,7 @@ namespace CredPlus.Compartilhado.Validations
     {
         public static Notification AssertLength(string stringValue, int minimum, int maximum, string message)
         {
-            var length = stringValue?.Trim().Length;
+            var length = stringValue.Trim().Length;
 
             return (length < minimum || length > maximum)
                 ? new Notification(message)
