@@ -5,6 +5,7 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
 {
     public class AvaliacaoCredito
     {
+        public Guid Id { get; private set; }
         public TipoRisco Risco { get; private set; }
         public DateTime DataAvaliacao { get; private set; }
         public string Justificativa { get; private set; }
@@ -12,12 +13,10 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
 
         public AvaliacaoCredito(string avaliador, TipoRisco risco, string justificativa)
         {
+            Id = Guid.NewGuid();
             Avalidador = avaliador;
             Justificativa = justificativa;
             Risco = risco;
         }
-
-
-
     }
 }

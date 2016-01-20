@@ -1,18 +1,20 @@
 ﻿using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Enums;
 using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Policies;
+using CredPlus.Compartilhado.Validations;
 using System;
 
 namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
 {
     public class SolicitacaoCredito
     {
-        internal SolicitacaoCreditoPolicy Policy { get; private set; }
+        internal Validatable Policy { get; private set; }
 
         public Guid Id { get; private set; }
         public Guid ClienteId { get; private set; }
         public bool Aprovada { get; private set; }
         public DateTime Data { get; private set; }
         public DateTime? DataSolicitacaoCliente { get; set; }
+        public DateTime? DataGeracaoCredito { get; private set; }
         public bool CreditoGerado { get; private set; }
         public decimal Valor { get; private set; }
         public decimal ValorAutorizado { get; private set; }
@@ -44,10 +46,16 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes
             Avaliacao = new AvaliacaoCredito(avaliador, risco, justificativa);
         }
 
-        internal void Solicitar(int quantidadeParcelas)
+        internal void Confirmar(int quantidadeParcelas)
         {
             DataSolicitacaoCliente = DateTime.Now;
             QuantidadeParcelas = quantidadeParcelas;
+        }
+
+        internal void ConfirmarCreditoGerado()
+        {
+            CreditoGerado = true;
+            DataGeracaoCredito = DateTime.Now;
         }
 
         public class Factory

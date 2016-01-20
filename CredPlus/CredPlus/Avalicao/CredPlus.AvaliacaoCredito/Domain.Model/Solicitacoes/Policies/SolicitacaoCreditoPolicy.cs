@@ -19,6 +19,5 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Policies
         protected override void Validate()
         {
         }
-
     }
 }
