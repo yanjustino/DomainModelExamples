@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus.AvaliacaoCredito",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus.AvaliacaoCredito.Tests", "Avalicao\CredPlus.AvaliacaoCredito.Tests\CredPlus.AvaliacaoCredito.Tests.csproj", "{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicação", "Aplicação", "{29E4ADC9-6259-4F96-BC3D-73DFF84B02A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus", "CredPlus\CredPlus.csproj", "{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +71,6 @@ Global
 		{4FC19490-D182-4B88-BAD5-85E7BC6B5A87} = {1AB49F75-5AF1-4481-8A0A-A2D2C9629599}
 		{1F43AEFC-E13E-404A-B124-BA6971B5EC1B} = {6D8B3BB3-D2D4-4D18-A101-B5C483004DC9}
 		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811} = {6D8B3BB3-D2D4-4D18-A101-B5C483004DC9}
+		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB} = {29E4ADC9-6259-4F96-BC3D-73DFF84B02A7}
 	EndGlobalSection
 EndGlobal

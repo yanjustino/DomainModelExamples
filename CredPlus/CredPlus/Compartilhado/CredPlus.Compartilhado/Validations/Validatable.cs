@@ -25,7 +25,8 @@ namespace CredPlus.Compartilhado.Validations
 
         public string StringifyNotifications()
         {
-            return string.Join<string>(" || ", _notifications.Select(x => x.Message));
+            var notificacoes = _notifications.Where(x => x != null);
+            return string.Join<string>(" || ", notificacoes.Select(x => x.Message));
         }
 
         protected void Notify(Notification notification)

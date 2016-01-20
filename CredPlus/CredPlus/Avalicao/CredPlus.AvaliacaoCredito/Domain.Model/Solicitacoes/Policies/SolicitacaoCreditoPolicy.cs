@@ -21,7 +21,8 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Policies
             Notify
             (
                 AssertionConcern.AssertNotNull(Solicitacao, "Solicitacão não pode ser nula"),
-                AssertionConcern.AssertTrue(Solicitacao.Valor > 0, "Solicitação inválida")
+                AssertionConcern.AssertTrue(Solicitacao.Valor > 0, "Solicitação inválida"),
+                AssertionConcern.AssertTrue(Solicitacao.Valor > 0, "Valor deve ser maior que zero")
             );
         }
     }
