@@ -9,5 +9,7 @@ namespace CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Repositories
     public interface ISolicitacaoCreditoRepository
     {
         void Salvar(SolicitacaoCredito solicitacao);
+
+        SolicitacaoCredito Localizar(Guid id);
     }
 }

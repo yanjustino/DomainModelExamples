@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicação", "Aplicação"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus", "CredPlus\CredPlus.csproj", "{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredPlus.Captacao", "Captacao\CredPlus.Captacao\CredPlus.Captacao.csproj", "{0426D63A-C52F-4B79-A457-71BB29B8564E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0426D63A-C52F-4B79-A457-71BB29B8564E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0426D63A-C52F-4B79-A457-71BB29B8564E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0426D63A-C52F-4B79-A457-71BB29B8564E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0426D63A-C52F-4B79-A457-71BB29B8564E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +78,6 @@ Global
 		{1F43AEFC-E13E-404A-B124-BA6971B5EC1B} = {6D8B3BB3-D2D4-4D18-A101-B5C483004DC9}
 		{FE6407ED-9BDB-4224-99E6-0F8DA6BDC811} = {6D8B3BB3-D2D4-4D18-A101-B5C483004DC9}
 		{0D79B033-C3BE-41DE-85DD-5E21EC1F19CB} = {29E4ADC9-6259-4F96-BC3D-73DFF84B02A7}
+		{0426D63A-C52F-4B79-A457-71BB29B8564E} = {822F6B69-B754-4432-9CA5-35D995E1608B}
 	EndGlobalSection
 EndGlobal

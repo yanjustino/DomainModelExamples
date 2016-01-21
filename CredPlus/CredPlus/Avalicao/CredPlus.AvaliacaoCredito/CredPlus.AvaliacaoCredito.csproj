@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Solicitacoes\Commands\RegistroSolicitacaoCreditoCommand.cs" />
-    <Compile Include="Application\Solicitacoes\ISolicitacaoCreditoService.cs" />
     <Compile Include="Application\Solicitacoes\SolicitacaoCreditoService.cs" />
     <Compile Include="Domain.Model\Solicitacoes\AvaliacaoCredito.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Enum\TipoRisco.cs" />
+    <Compile Include="Domain.Model\Solicitacoes\Events\SolicitacaoCreditoConfirmada.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Policies\AutorizacaoCreditoPolicy.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Policies\SolicitacaoCreditoPolicy.cs" />
     <Compile Include="Domain.Model\Solicitacoes\Repositories\ISolicitacaoCreditoRepository.cs" />

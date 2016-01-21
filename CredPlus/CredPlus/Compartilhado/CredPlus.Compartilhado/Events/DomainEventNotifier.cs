@@ -1,34 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CredPlus.Compartilhado.Events
 {
     public class DomainEventNotifier
     {
-        private static DomainEventNotifier _current;
-        public static DomainEventNotifier Current
+        public static IEventContainer Container { get; set; }
+
+
+        public static void Raise<T>(T domainEvent) where T : IDomainEvent
         {
-            get
+            try
             {
-                _current = _current ?? new DomainEventNotifier();
-                return _current;
+                if (Container != null)
+                {
+                    var handlers = Container.GetServices<T>();
+
+                    foreach (var item in handlers)
+                        ((IEventHandler<T>)item).Handle(domainEvent);
+                }
             }
-        }
-
-        private List<IEventHandler<IDomainEvent>> _handlers;
-
-        public void Register(IEventHandler<IDomainEvent> handler)
-        {
-            if (_handlers == null)
-                _handlers = new List<IEventHandler<IDomainEvent>>();
-
-            _handlers.Add(handler);
-
-        }
-
-        public void Raise<T>(T domainEvent) where T : IDomainEvent
-        {
-            foreach (var handler in _handlers)
-                Execute(domainEvent, handler);
+            catch (Exception)
+            {
+                //throw new RaiseEventException("Failed to raise event", ex);
+            }
         }
 
         private void Execute<T>(T domainEvent, IEventHandler<T> handler) where T : IDomainEvent

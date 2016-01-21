@@ -12,7 +12,6 @@ namespace CredPlus.Compartilhado.Validations
             get
             {
                 CreateNotificationListIfNull();
-                //_notifications.Clear();
                 Validate();
                 return !HasNotifications();
             }
@@ -32,19 +31,21 @@ namespace CredPlus.Compartilhado.Validations
         protected void Notify(Notification notification)
         {
             CreateNotificationListIfNull();
-            _notifications.Add(notification);
+            if (notification != null)
+                _notifications.Add(notification);
         }
 
         protected void Notify(List<Notification> notifications)
         {
             CreateNotificationListIfNull();
-            _notifications.AddRange(notifications);
+            _notifications.AddRange(notifications.Where(x => x != null));
         }
 
         protected void Notify(params Notification[] notifications)
         {
             CreateNotificationListIfNull();
-            _notifications.AddRange(notifications);
+            if (notifications != null && notifications.Count() > 0)
+                _notifications.AddRange(notifications.Where(x => x != null));
         }
 
         protected bool HasNotifications()

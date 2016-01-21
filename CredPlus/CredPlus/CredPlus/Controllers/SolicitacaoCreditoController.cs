@@ -3,9 +3,6 @@ using CredPlus.AvaliacaoCredito.Application.Solicitacoes.Commands;
 using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes;
 using CredPlus.AvaliacaoCredito.Domain.Model.Solicitacoes.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CredPlus.Controllers

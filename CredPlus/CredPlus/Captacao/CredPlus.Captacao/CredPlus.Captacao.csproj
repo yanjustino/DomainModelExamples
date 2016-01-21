@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F580F2C8-A87B-4A5D-BBE1-ADB235D9C711}</ProjectGuid>
+    <ProjectGuid>{0426D63A-C52F-4B79-A457-71BB29B8564E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CredPlus.Financiamento</RootNamespace>
-    <AssemblyName>CredPlus.Financiamento</AssemblyName>
+    <RootNamespace>CredPlus.Captacao</RootNamespace>
+    <AssemblyName>CredPlus.Captacao</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,15 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\CreditoService.cs" />
-    <Compile Include="Domain.Model\Creditos\Credito.cs" />
-    <Compile Include="Domain.Model\Creditos\Enums\TipoCredito.cs" />
-    <Compile Include="Domain.Model\Creditos\Parcela.cs" />
-    <Compile Include="Domain.Model\Creditos\Repositories\ICreditoRepository.cs" />
-    <Compile Include="Domain.Model\Creditos\ValueObjects\Taxa.cs" />
+    <Compile Include="Domain.Model\Clientes\Cliente.cs" />
+    <Compile Include="Domain.Model\Clientes\Empreendedor.cs" />
+    <Compile Include="Domain.Model\Clientes\ValueObjects\Cnpj.cs" />
+    <Compile Include="Domain.Model\Clientes\ValueObjects\Cpf.cs" />
+    <Compile Include="Domain.Model\Clientes\ValueObjects\Documento.cs" />
+    <Compile Include="Domain.Model\Clientes\ValueObjects\Email.cs" />
+    <Compile Include="Domain.Model\Clientes\ValueObjects\TipoDocumento.cs" />
+    <Compile Include="External\ClienteExternalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Compartilhado\CredPlus.Compartilhado\CredPlus.Compartilhado.csproj">
+      <Project>{4fc19490-d182-4b88-bad5-85e7bc6b5a87}</Project>
+      <Name>CredPlus.Compartilhado</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

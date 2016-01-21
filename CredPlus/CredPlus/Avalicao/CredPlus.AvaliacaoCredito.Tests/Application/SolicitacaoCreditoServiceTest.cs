@@ -19,7 +19,7 @@ namespace CredPlus.AvaliacaoCredito.Tests
     }
 
     [TestClass]
-    public class UnitTest1
+    public class SolicitacaoCreditoServiceTest
     {
         [TestMethod]
         public void TestMethod1()
