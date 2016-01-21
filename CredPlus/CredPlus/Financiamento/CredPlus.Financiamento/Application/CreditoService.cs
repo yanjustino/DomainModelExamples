@@ -13,7 +13,7 @@ namespace CredPlus.Financiamento.Application
     {
         private ICreditoRepository _creditoRepository;
 
-        public CreditoService()
+        public CreditoService(ICreditoRepository creditoRepository)
         {
             _creditoRepository = creditoRepository;
         }

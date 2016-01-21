@@ -9,6 +9,8 @@ namespace CredPlus.Captacao.Domain.Model.Clientes.ValueObjects
 
         protected override void Validate()
         {
+            //TODO : Validar Numeraçao
+
             Validations(
                 AssertionConcern.AssertNotEmpty(NumeroOriginal, "CNPJ não pode ser vazio"),
                 AssertionConcern.AssertNotNull(NumeroOriginal, "CNPJ não pode ser Nulo"),

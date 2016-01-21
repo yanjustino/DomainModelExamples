@@ -7,7 +7,6 @@ namespace CredPlus.Compartilhado.Events
     {
         public static IEventContainer Container { get; set; }
 
-
         public static void Raise<T>(T domainEvent) where T : IDomainEvent
         {
             try

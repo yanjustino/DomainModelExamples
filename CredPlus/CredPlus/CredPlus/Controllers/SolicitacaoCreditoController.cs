@@ -14,6 +14,11 @@ namespace CredPlus.Controllers
         {
             public bool Chamado { get; set; }
 
+            public SolicitacaoCredito Localizar(Guid id)
+            {
+                throw new NotImplementedException();
+            }
+
             public void Salvar(SolicitacaoCredito solicitacao)
             {
                 Chamado = true;

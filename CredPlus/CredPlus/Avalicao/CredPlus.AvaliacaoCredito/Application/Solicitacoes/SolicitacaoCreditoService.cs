@@ -47,7 +47,7 @@ namespace CredPlus.AvaliacaoCredito.Application.Solicitacoes
         private void ConfirmarGeracaoCredito(SolicitacaoCredito solicitacaoConfirmada)
         {
             var evento = new SolicitacaoCreditoConfirmada(solicitacaoConfirmada);
-            DomainEventNotifier.Current.Raise(evento);
+            DomainEventNotifier.Raise(evento);
 
             if (evento.Processado)
             {

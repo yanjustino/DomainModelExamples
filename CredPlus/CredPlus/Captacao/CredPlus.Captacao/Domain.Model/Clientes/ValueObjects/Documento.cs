@@ -40,9 +40,9 @@ namespace CredPlus.Captacao.Domain.Model.Clientes.ValueObjects
         {
             public static Documento New(string numero)
             {
-                if (TipoDocumento(numero) == Model.TipoDocumento.CPF)
+                if (TipoDocumento(numero) == ValueObjects.TipoDocumento.CPF)
                     return new Cpf(numero);
-                else if (TipoDocumento(numero) == Model.TipoDocumento.CNPJ)
+                else if (TipoDocumento(numero) == ValueObjects.TipoDocumento.CNPJ)
                     return new Cnpj(numero);
                 else
                     return null;
